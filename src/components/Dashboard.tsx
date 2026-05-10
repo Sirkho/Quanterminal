@@ -86,7 +86,16 @@ export default function Dashboard() {
               </button>
             </div>
           </div>
-          <p className="text-gray-600">Real-time cryptocurrency market data powered by CoinGecko</p>
+          <div className="flex items-center justify-between">
+            <p className="text-gray-600">Real-time cryptocurrency market data powered by CoinGecko</p>
+            <a 
+              href="/admin" 
+              className="text-sm font-medium text-blue-600 hover:text-blue-700 flex items-center space-x-1"
+            >
+              <Shield className="w-4 h-4" />
+              <span>Admin Panel</span>
+            </a>
+          </div>
         </div>
 
         <MarketStats data={globalData} />
