@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { RefreshCw, TrendingUp, TrendingDown, BarChart3 } from 'lucide-react';
+import { RefreshCw, TrendingUp, TrendingDown, BarChart3, Shield } from 'lucide-react';
 import MarketStats from './MarketStats';
 import CoinTable from './CoinTable';
 import CoinCard from './CoinCard';

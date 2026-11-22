@@ -1,71 +1,57 @@
 # Quanterminal
 
-Quanterminal is a modern cryptocurrency terminal built with React, TypeScript, and Vite. It provides real-time market data, coin information, and a dashboard for tracking your favorite cryptocurrencies. The project leverages Supabase for potential backend services and a clean, responsive UI with Tailwind CSS.
+Quanterminal is a cryptocurrency market dashboard built with React, TypeScript, and Vite. It reads public market data from the CoinGecko API and presents market overview, top coins, gainers, and losers.
+
+> **Project status:** early frontend prototype. It is not a trading terminal, broker integration, portfolio tracker, or execution system. Prices are public market snapshots fetched from CoinGecko; this app does not use a streaming market-data feed.
 
 ## Features
 
-*   **Real-time Market Data**: Displays up-to-date prices and market statistics for various cryptocurrencies.
-*   **Coin Information**: Detailed views for individual cryptocurrencies.
-*   **Interactive Dashboard**: A customizable dashboard to monitor selected coins.
-*   **Responsive Design**: Built with Tailwind CSS for a seamless experience across devices.
-*   **Type-safe Development**: Developed using TypeScript for robust and maintainable code.
+- Global market overview and BTC dominance
+- Top 50 cryptocurrencies by market capitalization
+- Top 20 gainers and losers by 24-hour price change
+- Manual refresh and optional 30-second polling
+- Responsive dashboard UI
 
-## Technologies Used
+## Tech stack
 
-*   **Frontend**: React, TypeScript, Vite
-*   **Styling**: Tailwind CSS, PostCSS
-*   **Backend/Database (potential)**: Supabase
-*   **Icons**: Lucide React
+- React 18, TypeScript, Vite
+- Tailwind CSS
+- CoinGecko public API
+- React Router and Lucide icons
 
-## Setup and Installation
+Supabase is listed as a dependency for possible future use; no Supabase backend is currently configured or required.
 
-To get this project up and running locally, follow these steps:
+## Requirements
 
-1.  **Clone the repository**:
-    ```bash
-    git clone https://github.com/Sirkho/Quanterminal.git
-    cd Quanterminal
-    ```
+- Node.js 20 or newer
+- npm
 
-2.  **Install dependencies**:
-    ```bash
-    npm install
-    # or yarn install
-    ```
+## Run locally
 
-3.  **Run the development server**:
-    ```bash
-    npm run dev
-    # or yarn dev
-    ```
-
-    The application will be available at `http://localhost:5173` (or another port if 5173 is in use).
-
-## Project Structure
-
-```
-Quanterminal/
-├── public/
-├── src/
-│   ├── components/       # Reusable UI components (e.g., CoinCard, CoinTable)
-│   ├── services/         # API integration (e.g., api.ts for fetching crypto data)
-│   ├── types/            # TypeScript type definitions (e.g., crypto.ts)
-│   ├── utils/            # Utility functions (e.g., format.ts)
-│   ├── App.tsx           # Main application component
-│   ├── index.css         # Global styles
-│   ├── main.tsx          # Entry point of the React application
-│   └── vite-env.d.ts     # Vite environment type definitions
-├── index.html            # Main HTML file
-├── package.json          # Project dependencies and scripts
-├── tsconfig.json         # TypeScript configuration
-├── vite.config.ts        # Vite build configuration
-└── ...                   # Other configuration files (Tailwind, PostCSS, ESLint)
+```bash
+git clone https://github.com/Sirkho/Quanterminal.git
+cd Quanterminal
+npm ci
+npm run dev
 ```
 
-## Contributing
+Open the local URL printed by Vite (normally `http://localhost:5173`).
 
-Contributions are welcome! Please feel free to open issues or submit pull requests.
+## Quality checks
+
+```bash
+npm run typecheck
+npm run lint
+npm run build
+```
+
+## Known limitations
+
+- CoinGecko rate limits and API availability affect data freshness.
+- The app currently fetches global data and three market lists separately.
+- The `/admin` route is a static UI mockup with placeholder metrics and activity. It has no authentication, authorization, database, or operational admin functionality. Do not use it to manage real users or systems.
+- No trade execution, exchange API keys, wallet connection, or financial advice is provided.
 
 ## License
 
-This project is open-source and available under the [MIT License](LICENSE).
+No license has been declared yet. All rights remain with the repository owner unless a license is added.
